@@ -1,4 +1,5 @@
 const ADD_TODO = 'ADD_TODO';
+const TODO_TOGGLED = 'TODO_TOGGLED';
 
 const add = (element) => {
     return {
@@ -7,7 +8,17 @@ const add = (element) => {
     }
 };
 
+const toggle = (element) => {
+    return {
+        type: TODO_TOGGLED,
+        payload: element
+    }
+};
+
+
 export {
     ADD_TODO,
-    add
+    TODO_TOGGLED,
+    add,
+    toggle,
 };

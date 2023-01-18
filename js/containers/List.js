@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import List from '../components/List';
+import { toggle } from "../redux/actions";
 
 const mapState = (state, ownProps) => {
     let todosFiltered = state.todos;
@@ -12,4 +13,10 @@ const mapState = (state, ownProps) => {
     }
 };
 
-export default connect(mapState)(List)
+const mapDispatch = (dispatch) => {
+    return {
+        toggle: (element) => dispatch(toggle(element))
+    }
+}
+
+export default connect(mapState, mapDispatch)(List);

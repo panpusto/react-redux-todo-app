@@ -2,7 +2,12 @@ import React from 'react';
 import Filter from './Filter';
 import Form from '../containers/Form';
 
-const List = ({items}) => {
+const List = ({items, toggle}) => {
+
+    const styleForDoneElem = {
+        textDecoration: 'line-through',
+    };
+
     return (
         <div>
             <Filter />
@@ -11,7 +16,10 @@ const List = ({items}) => {
             <ul>
                 {items.map((item, index) => (
                         <li key={index} >
-                            <span>{item.title}</span>
+                            <span 
+                                onClick={() => toggle(item)} 
+                                style={item.done ? styleForDoneElem : {}}>{item.title}
+                            </span>
                         </li>
                     ))}
             </ul>
