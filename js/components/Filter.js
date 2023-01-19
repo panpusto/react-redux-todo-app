@@ -19,8 +19,9 @@ const Filter = ({filter}) => {
         let results = [];
         for (let [pathName, description] of Object.entries(routes)) {
             results.push(
-                <li key={pathName}>
+                <li key={pathName} className='nav-item'>
                     <Link 
+                        className='nav-link sr-only'
                         to={pathName} 
                         style={pathName === filter 
                                 ? chosenFilterStyle 
@@ -33,11 +34,13 @@ const Filter = ({filter}) => {
     };
 
     return (
-        <div>
-            <ul>
-                {getRoutes()}
-            </ul>
-        </div>
+        <nav className='navbar navbar-expand navbar-light bg-light'>
+            <div className='collapse navbar-collapse'>
+                <ul className='navbar-nav'>
+                    {getRoutes()}
+                </ul>
+            </div>
+        </nav>
     );
 };
 

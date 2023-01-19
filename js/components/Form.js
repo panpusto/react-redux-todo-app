@@ -13,9 +13,21 @@ const Form = ({addToDo}) => {
     
     return (
         <div>
-             <form onSubmit={handleSubmit}>
-                 <input type="text" id="todoName" name="todoName" />
-                 <button type="submit">Add</button>
+             <form className='form-inline' onSubmit={handleSubmit}>
+                <div className='form-group mx-sm-3 mb-2'>
+                    <input 
+                        type="text" 
+                        id="todoName" 
+                        name="todoName" 
+                        placeholder='Task name' 
+                        className='form-control'
+                    />
+                </div>
+                <button 
+                    type="submit" 
+                    className='btn btn-primary mb-2'>
+                        Add
+                </button>
              </form>
          </div>
     );
