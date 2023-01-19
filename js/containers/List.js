@@ -9,7 +9,8 @@ const mapState = (state, ownProps) => {
     if (ownProps.location.pathname === '/not-done')
         todosFiltered = todosFiltered.filter(elem => !elem.done)
     return {
-        items: todosFiltered
+        items: todosFiltered,
+        filter: ownProps.location.pathname
     }
 };
 

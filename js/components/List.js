@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from './Filter';
 import Form from '../containers/Form';
 
-const List = ({items, toggle, remove}) => {
+const List = ({items, filter,  toggle, remove}) => {
 
     const styleForDoneElem = {
         textDecoration: 'line-through',
@@ -10,7 +10,7 @@ const List = ({items, toggle, remove}) => {
 
     return (
         <div>
-            <Filter />
+            <Filter filter={filter} />
             <Form />
             <div>
             <ul>
