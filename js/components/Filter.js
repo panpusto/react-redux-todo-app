@@ -18,7 +18,16 @@ const Filter = ({filter}) => {
     const getRoutes = () => {
         let results = [];
         for (let [pathName, description] of Object.entries(routes)) {
-            results.push(<li key={pathName}><Link to={pathName} style={pathName === filter ? chosenFilterStyle : {}}>{description}</Link></li>)
+            results.push(
+                <li key={pathName}>
+                    <Link 
+                        to={pathName} 
+                        style={pathName === filter 
+                                ? chosenFilterStyle 
+                                : {}}>
+                    {description}
+                    </Link>
+                </li>)
         }
         return results
     };
