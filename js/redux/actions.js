@@ -21,7 +21,15 @@ const remove = (element) => {
         type: TODO_REMOVED,
         payload: element
     }
-}
+};
+
+const removeAter2Sec = (element) => {
+    return (dispatch) => {
+        setTimeout(() => {
+            dispatch(remove(element))
+        }, 2000)
+    }
+};
 
 
 export {
@@ -31,4 +39,5 @@ export {
     add,
     toggle,
     remove,
+    removeAter2Sec,
 };

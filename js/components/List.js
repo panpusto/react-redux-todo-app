@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from './Filter';
 import Form from '../containers/Form';
 
-const List = ({items, filter,  toggle, remove}) => {
+const List = ({items, filter,  toggle, remove, asyncRemove}) => {
 
     const styleForDoneElem = {
         textDecoration: 'line-through',
@@ -21,6 +21,7 @@ const List = ({items, filter,  toggle, remove}) => {
                                 style={item.done ? styleForDoneElem : {}}>{item.title}
                             </span>
                             <button onClick={() => remove(item)}>Delete</button>
+                            <button onClick={() => asyncRemove(item)}>Delete after 2 sec</button>
                         </li>
                     ))}
             </ul>

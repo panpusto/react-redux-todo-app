@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import List from '../components/List';
-import { toggle, remove } from "../redux/actions";
+import { toggle, remove, removeAter2Sec } from "../redux/actions";
 
 const mapState = (state, ownProps) => {
     let todosFiltered = state.todos;
@@ -17,8 +17,9 @@ const mapState = (state, ownProps) => {
 const mapDispatch = (dispatch) => {
     return {
         toggle: (element) => dispatch(toggle(element)),
-        remove: (element) => dispatch(remove(element))
+        remove: (element) => dispatch(remove(element)),
+        asyncRemove: (element) => dispatch(removeAter2Sec(element))
     }
-}
+};
 
 export default connect(mapState, mapDispatch)(List);
